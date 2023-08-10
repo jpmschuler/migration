@@ -93,7 +93,7 @@ class GeneralRepository
         if ($this->getConfiguration('dryrun') === false) {
             $properties = $this->queue->updatePropertiesWithPropertiesFromQueue(
                 $tableName,
-                (int)$properties['uid'],
+                (int)($properties['uid'] ?? 0),
                 $properties
             );
 
